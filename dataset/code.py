@@ -3,3 +3,5 @@ ds=pd.read_csv("ehr_dataset.csv") #reading
 print(ds.head()) #print dataset headers
 print(ds.info()) #print dataset values
 print(ds.describe()) #print dataset statistics
+print(ds.isnull().sum())                    # Check for nulls
+ds = ds.dropna()
