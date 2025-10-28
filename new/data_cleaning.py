@@ -149,3 +149,16 @@ for col in cat_cols:
 
 target_le = LabelEncoder()
 ds_model['Diagnosis'] = target_le.fit_transform(ds_model['Diagnosis'])
+
+# ======================================================
+# Function for importing cleaned data into other scripts
+# ======================================================
+
+def load_and_clean_data():
+    """
+    Loads and returns the final cleaned EHR dataset.
+    Other scripts (like clustering.py) can call this function directly.
+    """
+    cleaned_df = pd.read_csv("ehr_dataset_cleaned.csv")
+    return cleaned_df
+
